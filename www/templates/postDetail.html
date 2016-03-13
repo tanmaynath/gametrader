@@ -1,0 +1,19 @@
+ 
+ <div class="bar bar-header bar-dark">  
+  <h1 class="title">Trade details</h1>
+  <a href="#/tab/rooms"><i class="button button-clear button icon ion-android-arrow-back"></i></a> 
+ </div>   
+
+<div class="bar bar-subheader item-input-inset bar-light">
+        
+    </div>
+    <ion-content class="has-subheader">
+        <ion-list>
+            <ion-item class="item-text-wrap item-icon-right" 
+            ng-repeat="name in post | filter:{displayName:whichPost}">    
+                <h2>Author: {{name.displayName}}</h2>
+                <p><b>Post:</b> {{name.post}}</p>
+                  
+            </ion-item>
+        </ion-list>    
+    </ion-content>

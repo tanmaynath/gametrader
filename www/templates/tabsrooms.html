@@ -1,0 +1,30 @@
+ <!--<ion-view view-title="Posts">-->
+ 
+ <div class="bar bar-header bar-dark">
+  <button class="button button-icon icon ion-navicon"></button>
+  
+  <h1 class="title">Posts</h1>
+  <button class="button button-icon icon ion-plus-round" ng-click="modal.show()"></button>
+</div>   
+  
+<div class="bar bar-subheader item-input-inset bar-light">
+        <label class="item-input-wrapper">
+            <i class="icon ion-search placeholder icon"></i>
+            <input type="search" ng-model="search" placeholder="Search Posts"/>
+        </label>
+    </div>
+    <ion-content class="has-subheader">
+        <ion-list>
+            <ion-item ng-class="{'star':name.star}" class="item-text-wrap item-icon-right" 
+            ng-repeat="name in post| filter:search" ng-if="name.post" href="#/tab/rooms/{{name.displayName}}">    
+                <h2>Author: {{name.displayName}}</h2>
+                <p><b>Post:</b> {{name.post| limitTo:100}} {{name.post.length>100 ? '&hellip;':' ...'}}</p>
+                <button class="button button-clear icon ion-star button-assertive" 
+                ng-click="toggleStar(name)" ng-show="name.star"></button>
+                <ion-option-button class="button-dark" ng-click="toggleStar(name)">
+                    <i class="icon ion-star"></i>
+                </ion-option-button>  
+            </ion-item>
+        </ion-list>    
+    </ion-content>
+<!--</ion-view>-->
